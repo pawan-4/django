@@ -1,9 +1,9 @@
 from django.utils import timezone
-from .models import Post
+from .models import Post,Category
 from django.shortcuts import render, get_object_or_404 ,redirect
+from .forms import PostForm   
 from .forms import PostForm
-from django.utils.text import slugify   
-
+  
 def post_list(request):
     posts = Post.objects.all().order_by('published_date')
     print(posts)
